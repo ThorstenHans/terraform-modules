@@ -1,3 +1,9 @@
+variable "instance_count" {
+    type = "number"
+    description = "provide 0 to skip creation"
+    default = 1
+}
+
 variable "name" {
   type        = "string"
   description = "Name of the Application Insights instance"

@@ -1,8 +1,9 @@
-variable "tags" {
-  type        = "map"
-  description = "Custom tags that will be assigned with the new Storage Accunt"
-  default     = {}
+variable "instance_count" {
+    type = "number"
+    description = "provide 0 to skip creation"
+    default = 1
 }
+
 
 variable "name" {
   type        = "string"
@@ -29,4 +30,10 @@ variable "replication_type" {
   type        = "string"
   description = "Storage Account Replication Type"
   default     = "LRS"
+}
+
+variable "tags" {
+  type        = "map"
+  description = "Custom tags that will be assigned with the new Storage Accunt"
+  default     = {}
 }

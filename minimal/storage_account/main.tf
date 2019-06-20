@@ -1,5 +1,6 @@
 resource "azurerm_storage_account" "storage_account" {
   name                     = "${var.name}"
+  count                    = "${var.instance_count}"
   resource_group_name      = "${var.resource_group_name}"
   location                 = "${var.location}"
   account_tier             = "${var.tier}"
