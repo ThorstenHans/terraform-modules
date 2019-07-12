@@ -1,6 +1,6 @@
 resource "azurerm_app_service_plan" "app_service_plan" {
   count               = "${var.create_app_service_plan ? 1 : 0}"
-  name                = "asp_${var.name}"
+  name                = "asp-${var.name}"
   resource_group_name = "${var.resource_group_name}"
   location            = "${var.location}"
   kind                = "FunctionApp"
@@ -16,7 +16,7 @@ module "app_insights" {
 
   instance_count      = "${var.create_application_insights ? 1 : 0}"
   application_type    = "web"
-  name                = "ai_${var.name}"
+  name                = "ai-${var.name}"
   resource_group_name = "${var.resource_group_name}"
   location            = "${var.location}"
   tags                = "${var.tags}"
