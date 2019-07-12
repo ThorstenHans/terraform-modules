@@ -12,5 +12,6 @@ resource "azurerm_servicebus_queue" "sbqueue" {
   resource_group_name = "${var.resource_group_name}"
   location            = "${var.location}"
 
+  namespace_name      = "${azurerm_servicebus_namespace.sbns.name}"
   enable_partitioning = "${var.enable_partitioning}"
 }
