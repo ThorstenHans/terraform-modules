@@ -25,7 +25,7 @@ module "app_insights" {
 module "storage_account" {
   source = "../storage_account"
 
-  name                = "sa${var.name}"
+  name                = "sa${replace(replace(var.name, "-",""),"_","")}"
   instance_count      = "${var.create_storage_account ? 1 : 0}"
   tier                = "${var.storage_account_tier}"
   replication_type    = "${var.storage_account_replication_type}"
@@ -35,7 +35,7 @@ module "storage_account" {
 }
 
 resource "azurerm_function_app" "function_app" {
-  name                      = "${var.name}"
+  name                      = "fn-app-${var.name}"
   resource_group_name       = "${var.resource_group_name}"
   location                  = "${var.location}"
   storage_connection_string = "${var.create_storage_account ? element(module.storage_account.primary_connection_string, 0) : var.storage_account_primary_connection_string}"
