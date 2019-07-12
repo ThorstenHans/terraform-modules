@@ -1,5 +1,5 @@
 variable "instance_count" {
-    type = "number"
+    type = number
     description = "provide 0 to skip creation"
     default = 1
 }
