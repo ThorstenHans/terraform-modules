@@ -1,0 +1,10 @@
+{
+    "extensions": [
+        "johnpapa.vscode-peacock",
+        "4ops.terraform"
+    ],
+    "settings": {
+        "peacock.color": "#9900cc"
+    },
+    "postCreateCommand": "bash .devcontainer/bootstrap.sh"
+}
